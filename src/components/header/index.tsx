@@ -12,6 +12,7 @@ import {
 	MDBCollapse
 } from 'mdb-react-ui-kit';
 import Login from '../Login';
+import { Link } from 'react-router-dom';
 
 export default function App() {
 	const [openBasic, setOpenBasic] = useState(false);
@@ -19,7 +20,9 @@ export default function App() {
 	return (
 		<MDBNavbar expand='lg' dark bgColor='dark'>
 			<MDBContainer fluid>
-				<MDBNavbarBrand href='#'>CarPlash</MDBNavbarBrand>
+				<MDBNavbarBrand>
+					<Link to='/'>CarPlash</Link>
+				</MDBNavbarBrand>
 
 				<MDBNavbarToggler
 					aria-controls='navbarSupportedContent'
@@ -33,18 +36,24 @@ export default function App() {
 				<MDBCollapse navbar open={openBasic}>
 					<MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
 						<MDBNavbarItem>
-							<MDBNavbarLink active aria-current='page' href='/'>
-								Inicio
+							<MDBNavbarLink active aria-current='page'>
+								<Link to='/'>Inicio</Link>
 							</MDBNavbarLink>
 						</MDBNavbarItem>
 						<MDBNavbarItem>
-							<MDBNavbarLink href='#'>Lugares</MDBNavbarLink>
+							<MDBNavbarLink>
+								<Link to='/user'>Usuarios</Link>
+							</MDBNavbarLink>
 						</MDBNavbarItem>
 						<MDBNavbarItem>
-							<MDBNavbarLink href='#'>Precios</MDBNavbarLink>
+							<MDBNavbarLink>
+								<Link to='/reservation'>Reservas</Link>
+							</MDBNavbarLink>
 						</MDBNavbarItem>
 						<MDBNavbarItem>
-							<MDBNavbarLink href='#'>Nosotros</MDBNavbarLink>
+							<MDBNavbarLink>
+								<Link to='/contact-us'>Nosotros</Link>
+							</MDBNavbarLink>
 						</MDBNavbarItem>
 					</MDBNavbarNav>
 

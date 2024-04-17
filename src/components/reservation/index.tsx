@@ -85,7 +85,7 @@ const ListRestaurant = () => {
 	}, []);
 
 	const deleteRestaurant = () =>
-		// id_restaurant: string
+		// id: string
 		{
 			Swal.fire({
 				title: '¿Estás seguro de que quieres eliminar este restaurante?',
@@ -99,7 +99,7 @@ const ListRestaurant = () => {
 			}).then((result) => {
 				if (result.isConfirmed) {
 					// restaurantDelete({
-					// 	id_restaurant: id_restaurant
+					// 	id: id
 					// })
 					// 	.then(({ data: { message } }: any) => {
 					// 		Swal.fire({
@@ -109,8 +109,8 @@ const ListRestaurant = () => {
 					// 		});
 					// 		setRestaurantData(
 					// 			restaurantData.filter(
-					// 				(restaurant: { id_restaurant: string }) =>
-					// 					restaurant.id_restaurant !== id_restaurant
+					// 				(restaurant: { id: string }) =>
+					// 					restaurant.id !== id
 					// 			)
 					// 		);
 					// 	})
@@ -137,8 +137,8 @@ const ListRestaurant = () => {
 	};
 
 	const functions = {
-		edit: ({ id_restaurant }: any) => (
-			<Link to={`/admin/restaurant/edit/${id_restaurant}`}>
+		edit: ({ id }: any) => (
+			<Link to={`/reservation/edit/${id}`}>
 				<FontAwesomeIcon
 					icon={faPenToSquare}
 					style={{ color: '#000' }}
@@ -146,11 +146,11 @@ const ListRestaurant = () => {
 			</Link>
 		),
 		delete: () => (
-			// { id_restaurant }: any
+			// { id }: any
 			<button
 				onClick={
 					() => deleteRestaurant()
-					// id_restaurant
+					// id
 				}
 			>
 				<FontAwesomeIcon icon={faTrash} style={{ color: '#ff0000' }} />
@@ -160,7 +160,7 @@ const ListRestaurant = () => {
 
 	return (
 		<TableList
-			linkCreate='/admin/restaurant/create'
+			linkCreate='/reservation/create'
 			title='Agregar Reserva'
 			body={restaurantData}
 			header={header}

@@ -17,10 +17,10 @@ const EditReservation = () => {
 	// const [reservation] = useReservationMutation();
 	// const [reservationPut] = useReservationPutMutation();
 	const [data, setData] = useState<IReservation>({
-		sede: '',
-		date: '',
-		placa: '',
-		servicio: ''
+		sede: 'Mayorca',
+		date: '2023-11-20 00:00:00',
+		placa: 'KOL987',
+		servicio: 'Full'
 	});
 
 	const updateReservation = () => {

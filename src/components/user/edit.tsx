@@ -16,10 +16,10 @@ const EditUser = () => {
 	// const [user] = useUserMutation();
 	// const [userPut] = useUserPutMutation();
 	const [data, setData] = useState<IUser>({
-		name: '',
-		lastName: '',
-		email: '',
-		phone: ''
+		name: 'Pepito',
+		lastName: 'perez',
+		email: 'pepiuto19388@gmail.com',
+		phone: '3126547888'
 	});
 
 	const updateUser = () => {

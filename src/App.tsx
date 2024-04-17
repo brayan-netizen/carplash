@@ -66,7 +66,7 @@ export default function App() {
 					}
 				/>
 				<Route
-					path='/reservation/edit'
+					path='/reservation/edit/:id'
 					element={
 						<Template>
 							<EditReservation />
@@ -90,7 +90,7 @@ export default function App() {
 					}
 				/>
 				<Route
-					path='/user/edit'
+					path='/user/edit/:id'
 					element={
 						<Template>
 							<EditUser />

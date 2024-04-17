@@ -16,42 +16,39 @@ const ContactUs = () => {
 	return (
 		<>
 			<Image
-				className='w-100'
-				src='https://cuerosvelezco.vtexassets.com/assets/vtex.file-manager-graphql/images/0bc4699f-9db0-4856-b926-5e0811ffa672___fdb31dd7621163fbdc228cb07531c6d7.jpg'
+				className='w-100 opacity-50'
+				src='https://assets.mockflow.com/app/wireframepro/company/Cd05505a082b74fb0997ab5a9bfa93f46/projects/MkpF65OZ6h/images/Mee7a9a04ed7392e3a3783f23134eade41694698345869'
 			/>
-			<Row>
+			<Row className='mt-5'>
 				<Image
 					style={{ width: '40%', padding: 0 }}
-					src='https://cuerosvelezco.vtexassets.com/assets/vtex.file-manager-graphql/images/0bc4699f-9db0-4856-b926-5e0811ffa672___fdb31dd7621163fbdc228cb07531c6d7.jpg'
+					src='https://assets.mockflow.com/app/wireframepro/company/Cd05505a082b74fb0997ab5a9bfa93f46/projects/MkpF65OZ6h/images/M884676c487c93a011b50ed571e6a55401694701149245'
 				/>
 				<Card style={{ width: '60%' }}>
 					<Card.Body>
-						<Card.Title>Card Title</Card.Title>
-						<Card.Subtitle className='mb-2 text-muted'>
-							Card Subtitle
-						</Card.Subtitle>
-						<Card.Text>
-							Some quick example text to build on the card title
-							and make up the bulk of the card's content.
+						<Card.Title className='my-5'>
+							Nuestros medios
+						</Card.Title>
+						<Card.Text className='mb-5'>
+							WhatsApp: 3029675434 <br />
+							Correo: atencion@carplash.com <br />
+							Servicio al cliente: 01-800-9865842
 						</Card.Text>
 						<MDBBtn
 							className='m-1'
 							style={{ backgroundColor: '#3b5998' }}
-							href='#'
 						>
 							<MDBIcon fab icon='facebook-f' />
 						</MDBBtn>
 						<MDBBtn
 							className='m-1'
 							style={{ backgroundColor: '#55acee' }}
-							href='#'
 						>
 							<MDBIcon fab icon='twitter' />
 						</MDBBtn>
 						<MDBBtn
 							className='m-1'
 							style={{ backgroundColor: '#ac2bac' }}
-							href='#'
 						>
 							<MDBIcon fab icon='instagram' />
 						</MDBBtn>
@@ -59,7 +56,6 @@ const ContactUs = () => {
 						<MDBBtn
 							className='m-1'
 							style={{ backgroundColor: '#0082ca' }}
-							href='#'
 						>
 							<MDBIcon fab icon='linkedin-in' />
 						</MDBBtn>

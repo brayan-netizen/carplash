@@ -1,3 +1,7 @@
+.navbar a a {
+	color: unset;
+	text-decoration: none;
+}
 .line-txt:after {
 	content: '';
 	width: 50px;

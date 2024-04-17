@@ -1,4 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faKey } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	MDBBtn,
 	MDBCard,
@@ -10,6 +13,7 @@ import {
 	MDBModalHeader
 } from 'mdb-react-ui-kit';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface FormProps {
 	pass: string;
@@ -28,14 +32,15 @@ const FormLogin = ({
 }: FormProps) => {
 	return (
 		<MDBCardBody className='p-5 w-100 d-flex flex-column'>
-			<h2 className='fw-bold mb-2 text-center'>Sign in</h2>
-			<p className='text-white-50 mb-3'>
-				Please enter your login and password!
-			</p>
-
+			<FontAwesomeIcon
+				size='8x'
+				icon={faUser}
+				color='black'
+				className='mx-2 mb-5 w-100'
+			/>
 			<MDBInput
 				wrapperClass='mb-4 w-100'
-				label='Email address'
+				label='Correo electrónico'
 				id='formControlLg'
 				type='email'
 				size='lg'
@@ -46,7 +51,7 @@ const FormLogin = ({
 			/>
 			<MDBInput
 				wrapperClass='mb-4 w-100'
-				label='Password'
+				label='Contraseña'
 				id='formControlLg'
 				type='password'
 				size='lg'
@@ -55,36 +60,46 @@ const FormLogin = ({
 					setPass(event.target.value);
 				}}
 			/>
-			<div className='d-flex justify-content-between mx-4 mb-4'>
+			<div className='d-flex flex-column justify-content-between mx-4 mb-4'>
 				<MDBCheckbox
 					name='flexCheck'
 					value=''
 					id='flexCheckDefault'
-					label='Remember me'
+					label='Recuérdame'
 				/>
+			</div>
+			<MDBBtn color='dark' size='lg'>
+				Iniciar sesion
+			</MDBBtn>
+			<div className='d-flex my-2 flex-row'>
+				<Link className='mx-1' to='/user/create'>
+					Crea una cuenta nueva
+				</Link>
 				<a
+					className='mx-1'
 					href='javascript:void(0);'
 					onClick={() => setActiveRePass(true)}
 				>
-					Forgot password?
+					¿Has olvidado tu contraseña?
 				</a>
 			</div>
-			<MDBBtn size='lg'>Login</MDBBtn>
 		</MDBCardBody>
 	);
 };
 
-const Repass = ({ email, setEmail }: any) => {
+const Repass = ({ email, setEmail, setActiveRePass }: any) => {
 	return (
 		<MDBCardBody className='p-5 w-100 d-flex flex-column'>
-			<h2 className='fw-bold mb-2 text-center'>Sign in</h2>
-			<p className='text-white-50 mb-3'>
-				Please enter your login and password!
-			</p>
+			<FontAwesomeIcon
+				size='8x'
+				icon={faKey}
+				color='black'
+				className='mx-2 mb-5 w-100'
+			/>
 
 			<MDBInput
 				wrapperClass='mb-4 w-100'
-				label='Email address'
+				label='Correo electrónico'
 				id='formControlLg'
 				type='email'
 				size='lg'
@@ -93,13 +108,19 @@ const Repass = ({ email, setEmail }: any) => {
 					setEmail(event.target.value);
 				}}
 			/>
-			<MDBCheckbox
-				name='flexCheck'
-				id='flexCheckDefault'
-				className='mb-4'
-				label='Remember password'
-			/>
-			<MDBBtn size='lg'>Login</MDBBtn>
+			<a
+				className='mb-2'
+				href='javascript:void(0);'
+				onClick={() => setActiveRePass(false)}
+			>
+				Iniciar sesión
+			</a>
+			<MDBBtn color='dark' size='lg'>
+				Recuperar
+			</MDBBtn>
+			<Link className='text-end m-2 mb-5' to={''}>
+				¿No recibí el correo electrónico?
+			</Link>
 		</MDBCardBody>
 	);
 };
@@ -127,6 +148,7 @@ const Login = () => {
 					className='bg-white mx-auto'
 					style={{
 						borderRadius: '1rem',
+						minWidth: '500px',
 						maxWidth: '500px',
 						position: 'fixed',
 						left: '50%',
@@ -150,7 +172,11 @@ const Login = () => {
 							setActiveRePass={setActiveRePass}
 						/>
 					) : (
-						<Repass email={email} setEmail={setEmail} />
+						<Repass
+							email={email}
+							setEmail={setEmail}
+							setActiveRePass={setActiveRePass}
+						/>
 					)}
 				</MDBCard>
 			</MDBModal>
